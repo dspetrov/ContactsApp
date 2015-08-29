@@ -2,7 +2,6 @@
     padding: 0 100% 100% 0;
     text-decoration: none;
 }
-
 .smallProfile {
     border-radius: 50%;
     width: 50px;
@@ -10,7 +9,6 @@
     margin-right: 10px;
     vertical-align: middle;
 }
-
 .largeProfile {
     margin-left: auto;
     margin-right: auto;
@@ -20,7 +18,9 @@
     width: 200px;
     height: 200px;
 }
-
 #update-photo {
     width: 99%;
+}
+body {
+    background-color: Red;
 }
