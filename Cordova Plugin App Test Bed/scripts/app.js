@@ -74,4 +74,15 @@
         }
     }
 
+    window.updatePhoto = function () {
+        navigator.camera.getPicture(onPhotoSuccess, onError, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+    }
+
+    function onPhotoSuccess(imageURI) {
+        $(".largeProfile").attr("src", imageURI);
+        var photo = [];
+        photo[0] = new ContactField('photo', imageURI, false);
+        selectedContact.photos = photo;
+        selectedContact.save();
+    }
 }());
