@@ -75,7 +75,10 @@
     }
 
     window.updatePhoto = function () {
-        navigator.camera.getPicture(onPhotoSuccess, onError, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+        navigator.camera.getPicture(onPhotoSuccess, onError, {
+            quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI
+        });
     }
 
     function onPhotoSuccess(imageURI) {
@@ -84,5 +87,9 @@
         photo[0] = new ContactField('photo', imageURI, false);
         selectedContact.photos = photo;
         selectedContact.save();
+
+        if (window.plugins && window.plugins.toast) {
+            window.plugins.toast.showShortCenter("The profile picture has been updated!");
+        }
     }
 }());
